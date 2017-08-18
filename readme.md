@@ -9,11 +9,11 @@ You can use it to easily manage your configuration, and use the Facade to provid
 
 Require this package in your composer.json and run composer update (or run `composer require barryvdh/laravel-omnipay:0.2.x` directly):
 
-    "siqwell/laravel-omnipay": "0.2.*@dev"
+    "siqwell/omnipay": "0.2.*@dev"
 
 After updating composer, add the ServiceProvider to the providers array in config/app.php
 
-    'Barryvdh\Omnipay\ServiceProvider',
+    'Siqwell\Omnipay\ServiceProvider',
 
 You need to publish the config for this package. A sample configuration is provided. The defaults will be merged with gateway specific configuration.
 
@@ -21,7 +21,7 @@ You need to publish the config for this package. A sample configuration is provi
 
 To use the Facade (`Omnipay::purchase()` instead of `App::make(`omnipay`)->purchase()`), add that to the facades array.
 
-     'Omnipay' => 'Barryvdh\Omnipay\Facade',
+     'Omnipay' => 'Siqwell\Omnipay\Facade',
 
 When calling the Omnipay facade/instance, it will create the default gateway, based on the configuration.
 You can change the default gateway by calling `Omnipay::setDefaultGateway('My\Gateway')`.
@@ -35,6 +35,7 @@ You can get a different gateway by calling `Omnipay::gateway('My\Cass')`
         'description' => $order->description,
         'returnUrl' => URL::action('PurchaseController@return', [$order->id]),
     ];
+    
     $response = Omnipay::purchase($params)->send();
 
     if ($response->isSuccessful()) {
@@ -55,4 +56,5 @@ Besides the gateway calls, there is also a shortcut for the creditcard:
         'lastName' => 'Tables',
         'number' => '4111111111111111',
     );
+    
     $card = Omnipay::CreditCard($formInputData);
