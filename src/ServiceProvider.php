@@ -1,7 +1,12 @@
-<?php namespace Barryvdh\Omnipay;
+<?php
+namespace Siqwell\Omnipay;
 
 use Omnipay\Common\GatewayFactory;
 
+/**
+ * Class ServiceProvider
+ * @package Siqwell\Omnipay
+ */
 class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 
     /**
@@ -19,6 +24,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
     public function register()
     {
         $configPath = __DIR__ . '/../config/omnipay.php';
+
         $this->publishes([$configPath => config_path('omnipay.php')]);
         
         $this->app->singleton('omnipay',function ($app){
@@ -34,6 +40,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
      */
     public function provides()
     {
-        return array('omnipay');
+        return ['omnipay'];
     }
 }

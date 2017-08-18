@@ -1,21 +1,20 @@
 <?php
 
-return array(
+return [
 
     /** The default gateway name */
-    'gateway' => 'PayPal_Express',
+    'gateway'  => 'PayPal_Express',
 
     /** The default settings, applied to all gateways */
-    'defaults' => array(
+    'defaults' => [
         'testMode' => false,
-    ),
+    ],
 
     /** Gateway specific parameters */
-    'gateways' => array(
-        'PayPal_Express' => array(
-            'username' => '',
-            'landingPage' => array('billing', 'login'), 
-        ),
-    ),
-
-);
+    'gateways' => [
+        'PayPal_Express' => [
+            'username'    => '',
+            'landingPage' => ['billing', 'login'],
+        ],
+    ]
+];

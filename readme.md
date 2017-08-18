@@ -9,7 +9,7 @@ You can use it to easily manage your configuration, and use the Facade to provid
 
 Require this package in your composer.json and run composer update (or run `composer require barryvdh/laravel-omnipay:0.2.x` directly):
 
-    "barryvdh/laravel-omnipay": "0.2.*@dev"
+    "siqwell/laravel-omnipay": "0.2.*@dev"
 
 After updating composer, add the ServiceProvider to the providers array in config/app.php
 
