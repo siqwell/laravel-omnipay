@@ -9,7 +9,7 @@ You can use it to easily manage your configuration, and use the Facade to provid
 
 Require this package in your composer.json and run composer update (or run `composer require siqwell/omnipay` directly):
 
-    "siqwell/omnipay": "^0.1.4"
+    "siqwell/laravel-omnipay": "^0.1.4"
 
 After updating composer, add the ServiceProvider to the providers array in config/app.php
 
