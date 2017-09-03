@@ -1,5 +1,5 @@
 {
-    "name": "siqwell/omnipay",
+    "name": "siqwell/laravel-omnipay",
     "description": "Omnipay Service Provider for Laravel",
     "keywords": ["laravel", "omnipay"],
     "license": "MIT",
