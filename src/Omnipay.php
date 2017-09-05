@@ -1,15 +1,15 @@
 <?php
 namespace Siqwell\Omnipay;
 
+use Illuminate\Support\Facades\Facade;
 use Omnipay\Common\CreditCard;
 
 /**
  * Class Facade
  * @package Barryvdh\Omnipay
  */
-class Facade extends \Illuminate\Support\Facades\Facade
+class Omnipay extends Facade
 {
-
     /**
      * {@inheritDoc}
      */
