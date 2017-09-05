@@ -1,13 +1,14 @@
 <?php
 namespace Siqwell\Omnipay;
 
+use Illuminate\Support\ServiceProvider;
 use Omnipay\Common\GatewayFactory;
 
 /**
- * Class ServiceProvider
+ * Class OmnipayServiceProvider
  * @package Siqwell\Omnipay
  */
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+class OmnipayServiceProvider extends ServiceProvider
 {
 
     /**

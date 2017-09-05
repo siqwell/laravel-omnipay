@@ -7,6 +7,7 @@ use Omnipay\Common\CreditCard;
 /**
  * Class Facade
  * @package Barryvdh\Omnipay
+ * @method static \Omnipay\Common\AbstractGateway gateway($name)
  */
 class Omnipay extends Facade
 {
