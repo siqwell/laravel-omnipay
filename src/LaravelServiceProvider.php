@@ -30,8 +30,7 @@ class LaravelServiceProvider extends ServiceProvider
         $this->publishes([$configPath => config_path('omnipay.php')]);
 
         $this->app->singleton('omnipay', function ($app) {
-            $defaults = $app['config']->get('omnipay.defaults', array());
-
+            $defaults = $app['config']->get('omnipay.defaults', []);
             return new GatewayManager($app, new GatewayFactory, $defaults);
         });
     }
