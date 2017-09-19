@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Siqwell\\LaraPlans\\LaraPlansServiceProvider"
+                "Siqwell\\Omnipay\\LaravelServiceProvider"
             ],
             "aliases": {
                 "Omnipay": "Siqwell\\Omnipay\\Omnipay"
