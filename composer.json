@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "illuminate/support": "5.4.*",
+        "illuminate/support": "^5.4",
         "omnipay/common": "~2.5.2"
     },
     "autoload": {
