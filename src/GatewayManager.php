@@ -75,10 +75,7 @@ class GatewayManager
      */
     protected function getConfig($name)
     {
-        return array_merge(
-            $this->defaults,
-            $this->app['config']->get('omnipay.gateways.' . $name, array())
-        );
+        return array_merge($this->defaults, $this->app['config']->get('omnipay.gateways.' . $name, array()));
     }
 
     /**

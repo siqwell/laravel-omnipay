@@ -17,5 +17,15 @@
         "psr-4": {
             "Siqwell\\Omnipay\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Siqwell\\LaraPlans\\LaraPlansServiceProvider"
+            ],
+            "aliases": {
+                "Omnipay": "Siqwell\\Omnipay\\Omnipay"
+            }
+        }
     }
 }

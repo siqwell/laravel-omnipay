@@ -1,9 +1,8 @@
 <?php
 
 return [
-
     /** The default gateway name */
-    'gateway'  => 'PayPal_Express',
+    'gateway'  => 'WebMoney',
 
     /** The default settings, applied to all gateways */
     'defaults' => [
@@ -12,9 +11,8 @@ return [
 
     /** Gateway specific parameters */
     'gateways' => [
-        'PayPal_Express' => [
-            'username'    => '',
-            'landingPage' => ['billing', 'login'],
+        'WebMoney' => [
+
         ],
     ]
 ];

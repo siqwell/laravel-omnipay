@@ -1,4 +1,5 @@
 <?php
+
 namespace Siqwell\Omnipay;
 
 use Illuminate\Support\Facades\Facade;

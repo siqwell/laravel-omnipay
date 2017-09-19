@@ -5,10 +5,10 @@ use Illuminate\Support\ServiceProvider;
 use Omnipay\Common\GatewayFactory;
 
 /**
- * Class OmnipayServiceProvider
+ * Class LaravelServiceProvider
  * @package Siqwell\Omnipay
  */
-class OmnipayServiceProvider extends ServiceProvider
+class LaravelServiceProvider extends ServiceProvider
 {
 
     /**
@@ -31,6 +31,7 @@ class OmnipayServiceProvider extends ServiceProvider
 
         $this->app->singleton('omnipay', function ($app) {
             $defaults = $app['config']->get('omnipay.defaults', array());
+
             return new GatewayManager($app, new GatewayFactory, $defaults);
         });
     }
