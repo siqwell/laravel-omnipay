@@ -2,7 +2,10 @@
 
 return [
     /** The default gateway name */
-    'gateway'  => 'WebMoney',
+    'gateway'  => 'wmr',
+
+    /** Default System Currency */
+    'currency' => env('DEFAULT_CURRENCY', 'RUB'),
 
     /** The default settings, applied to all gateways */
     'defaults' => [
@@ -11,8 +14,21 @@ return [
 
     /** Gateway specific parameters */
     'gateways' => [
-        'WebMoney' => [
-
+        'wmr' => [
+            'gateway' => 'WebMoney',
+            'parameters' => [
+                'currency'      => 'RUB',
+                'merchantPurse' => 'R123456789000',
+                'secretKey'     => 'secret',
+            ]
+        ],
+        'wmz' => [
+            'gateway' => 'WebMoney',
+            'parameters' => [
+                'currency'      => 'USD',
+                'merchantPurse' => 'Z123456789000',
+                'secretKey'     => 'secret',
+            ]
         ],
     ]
 ];
