@@ -9,7 +9,6 @@ use Omnipay\Common\GatewayFactory;
  */
 class GatewayManager
 {
-
     /**
      * The application instance.
      *
@@ -49,33 +48,44 @@ class GatewayManager
     /**
      * Get a gateway
      *
-     * @param null $class
+     * @param null $key
      *
      * @return mixed
      */
-    public function gateway($class = null)
+    public function gateway($key = null) // wmr
     {
-        $class = $class ?: $this->getDefaultGateway();
+        $key = $key ?: $this->getDefaultGateway();
 
-        if (!isset($this->gateways[$class])) {
-            $gateway = $this->factory->create($class, null, $this->app['request']);
-            $gateway->initialize($this->getConfig($class));
-            $this->gateways[$class] = $gateway;
+        if (!isset($this->gateways[$key])) {
+
+            $this->gateways[$key] = $this->factory->create(
+                $this->getGatewayName($key),
+                null,
+                $this->app['request']
+            )->initialize($this->getConfig($key));
         }
 
-        return $this->gateways[$class];
+        return $this->gateways[$key];
     }
 
     /**
-     * Get the configuration, based on the config and the defaults.
-     *
-     * @param $name
+     * @param $key
      *
      * @return array
      */
-    protected function getConfig($name)
+    protected function getConfig($key)
     {
-        return array_merge($this->defaults, $this->app['config']->get('omnipay.gateways.' . $name, array()));
+        return array_merge($this->defaults, $this->app['config']->get('omnipay.gateways.' . $key . '.parameters', []));
+    }
+
+    /**
+     * @param $key
+     *
+     * @return string
+     */
+    protected function getGatewayName($key)
+    {
+        return $this->app['config']->get('omnipay.gateways.' . $key . '.gateway');
     }
 
     /**
@@ -110,6 +120,6 @@ class GatewayManager
      */
     public function __call($method, $parameters)
     {
-        return call_user_func_array(array($this->gateway(), $method), $parameters);
+        return call_user_func_array([$this->gateway(), $method], $parameters);
     }
 }
