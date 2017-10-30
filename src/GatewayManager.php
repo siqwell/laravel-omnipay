@@ -52,7 +52,7 @@ class GatewayManager
      *
      * @return mixed
      */
-    public function gateway($key = null) // wmr
+    public function gateway($key = null)
     {
         $key = $key ?: $this->getDefaultGateway();
 
@@ -62,7 +62,9 @@ class GatewayManager
                 $this->getGatewayName($key),
                 null,
                 $this->app['request']
-            )->initialize($this->getConfig($key));
+            )->initialize(
+                $this->getConfig($key)
+            );
         }
 
         return $this->gateways[$key];
