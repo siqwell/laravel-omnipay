@@ -1,4 +1,4 @@
-## Omnipay for Laravel 5.5
+## Omnipay for Laravel 5.6
 
 ## Installation
 
