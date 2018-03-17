@@ -10,8 +10,8 @@
         }
     ],
     "require": {
-        "illuminate/support": "^5.4",
-        "omnipay/common": "~2.5.2"
+        "illuminate/support": "^5.6",
+        "omnipay/common": "dev-master"
     },
     "autoload": {
         "psr-4": {
