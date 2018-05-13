@@ -27,5 +27,6 @@
                 "Omnipay": "Siqwell\\Omnipay\\Omnipay"
             }
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
